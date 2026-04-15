@@ -1,0 +1,11 @@
+:80 {
+    root * /usr/share/caddy
+
+    # Gzip compression
+    encode gzip
+
+    # SPA fallback — all unknown paths serve index.html
+    try_files {path} /index.html
+
+    file_server
+}

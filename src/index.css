@@ -1,0 +1,62 @@
+/* Sidebar dark input placeholder — white */
+.sidebar-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* New Company form inputs inside white cards */
+.company-field-input::placeholder {
+  color: #b0b8c8;
+}
+
+/* ── Admin layout — mobile sidebar ──────────────────────── */
+.admin-layout {
+  height: calc(100vh - 56px);
+  display: flex;
+  overflow: hidden;
+}
+
+.admin-sidebar {
+  width: 268px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.admin-main {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+@media (max-width: 767px) {
+  .admin-layout {
+    height: auto;
+    min-height: calc(100vh - 56px);
+    overflow: visible;
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    bottom: 0;
+    z-index: 1050;
+    transform: translateX(-100%);
+    overflow-y: auto;
+    width: 280px;
+  }
+
+  .admin-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .admin-main {
+    min-height: calc(100vh - 56px);
+  }
+}
+
+/* ── AppHeader mobile ────────────────────────────────────── */
+@media (max-width: 400px) {
+  .nav-label {
+    display: none;
+  }
+}
