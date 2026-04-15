@@ -4,3 +4,12 @@ services:
     ports:
       - "4001:80"
     restart: unless-stopped
+    networks:
+      - qualifylead_net
+
+networks:
+  qualifylead_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
